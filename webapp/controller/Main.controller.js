@@ -18,10 +18,11 @@ sap.ui.define([
 			    this._mViewSettingsDialogs = {};
             },
 
-            onListItemPress: function () {
-                var oFCL = this.oView.getParent().getParent();
-
-                oFCL.setLayout(fioriLibrary.LayoutType.TwoColumnsMidExpanded);
+            onListItemPress: function (oEvent) {
+                let ssalesorderPath = oEvent.getSource().getBindingContext().getPath(),
+                oSelectedsalesorder = ssalesorderPath.split("'")[1]; // We split the path /CustomerSet('145999') into 3 pieces by splitting on '
+            
+                this.getOwnerComponent().getRouter().navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, salesorder: oSelectedsalesorder});
             },
             handleSortButtonPressed: function () {
                 this.getViewSettingsDialog("ap.salesoreder.fragments.sortDialog")

@@ -1,4 +1,5 @@
 <mvc:View
+    controllerName="ap.salesoreder.controller.SalesOrderDetail"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.uxap"
 	xmlns:m="sap.m"
 	xmlns:f="sap.f"
@@ -31,36 +32,11 @@
 			</m:FlexBox>
 		</headerContent>
         <sections>
-			<ObjectPageSection title="General Information">
+			<ObjectPageSection title="Items">
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>
-							<form:SimpleForm
-								maxContainerCols="2"
-								editable="false"
-								layout="ResponsiveGridLayout"
-								labelSpanL="12"
-								labelSpanM="12"
-								emptySpanL="0"
-								emptySpanM="0"
-								columnsL="1"
-								columnsM="1">
-								<form:content>
-									<m:Label text="Product ID"/>
-									<m:Label text="Description"/>
-									<m:Label text="Supplier"/>
-								</form:content>
-							</form:SimpleForm>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-
-			<ObjectPageSection title="Suppliers">
-				<subSections>
-					<ObjectPageSubSection>
-						<blocks>
-							<m:Text text="Here comes the sales data table"/>
+							
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
