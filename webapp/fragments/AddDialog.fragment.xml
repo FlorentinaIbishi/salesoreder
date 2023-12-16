@@ -9,7 +9,7 @@
             <Input id="iVbeln" value="" />
 
             <Label text="Erdat" />
-            <Input id="iErdat" value="" />
+            <DatePicker id="iErdat" value="" />
         </VBox>
         <Button text="add" press="onAddSalesorder"></Button>
          <Button text="cancel" press="onCancelAddsalesorder"></Button>
