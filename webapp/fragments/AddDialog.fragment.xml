@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="addsalesorderdialog"
+        title="AddSalesOrder"
+        afterClose="onDialogClosed"
+    >
+        <VBox>
+            <Label text="Vbeln" />
+            <Input id="iVbeln" value="" />
+
+            <Label text="Erdat" />
+            <Input id="iErdat" value="" />
+        </VBox>
+        <Button text="add" press="onAddSalesorder"></Button>
+         <Button text="cancel" press="onCancelAddsalesorder"></Button>
+    </Dialog>
+</core:FragmentDefinition>

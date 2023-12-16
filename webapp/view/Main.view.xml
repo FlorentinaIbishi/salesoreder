@@ -12,6 +12,11 @@
 				<OverflowToolbar>
 					<Title text="Salesorders" level="H2"/>
 					<ToolbarSpacer/>
+                    <Button 
+                    type="Emphasized"
+                    text="Add"
+                    press="onAddButtonPress"
+                    ></Button>
 					<Button
 						tooltip="Sort"
 						icon="sap-icon://sort"

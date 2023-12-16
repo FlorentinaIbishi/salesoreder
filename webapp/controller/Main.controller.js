@@ -90,5 +90,38 @@ sap.ui.define([
                 // this.byId("vsdFilterBar").setVisible(aFilters.length > 0);
                 // this.byId("vsdFilterLabel").setText(mParams.filterString);
             },
+            onAddButtonPress: function() {
+                var oView =  this.getView();
+
+                if(!this.oDialog) {
+                    this.oDialog = Fragment.load({
+                        id: oView.getId(),
+                        name: "ap.salesoreder.fragments.AddDialog",
+                        controller: this
+                    }).then(function(oDialog) {
+                        oView.addDependent(oDialog);
+                        return oDialog;
+                    });
+                }
+                this.oDialog.then(function(oDialog) {
+                    oDialog.open();
+                })
+            },
+
+            onAddSalesorder: function(){
+                var salesorderval = {
+                    Vbeln: this.byId("iVbeln").getValue(),
+                    Erdat: this.byId("iErdat").getValue()
+                };
+
+                this.oDialog.then(function(oDialog) {
+                    oDialog.close();
+                });
+            },
+            onCancelAddsalesorder: function(){
+                this.oDialog.then(function(oDialog) {
+                    oDialog.close();
+                });
+            }
         });
     });
