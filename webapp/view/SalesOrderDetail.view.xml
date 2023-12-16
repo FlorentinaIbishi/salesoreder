@@ -19,24 +19,59 @@
 			</ObjectPageDynamicHeaderTitle>
 		</headerTitle>
         <headerContent>
-			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Main Category"/>
-				</m:VBox>
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Subcategory"/>
-				</m:VBox>
-				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
-					<m:Label text="Price"/>
-				</m:VBox>
-			</m:FlexBox>
 		</headerContent>
         <sections>
 			<ObjectPageSection title="Items">
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>
-							
+			<m:Table
+                id="salesorderitemTable"
+                items="{sales_orderSet>/sales_order_itemSet}"
+
+            >
+             <m:headerToolbar>
+				<m:OverflowToolbar>
+					<m:Title text="Items" level="H2"/>
+					<m:ToolbarSpacer/>
+				</m:OverflowToolbar>
+			</m:headerToolbar>
+                <m:columns>
+                    <m:Column
+                        id="vbelnCol"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <m:Text text="Vbeln" />
+                    </m:Column>
+                    <m:Column
+                        id="matnrCol"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <m:Text text="Matnr" />
+                    </m:Column>
+                    <m:Column
+                        id="posnrCol"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <m:Text text="Posnr" />
+                    </m:Column>
+                </m:columns>
+                <m:items>
+                    <m:ColumnListItem vAlign="Middle" >
+                        <m:cells>
+                            <m:Text text="{Vbeln}" />
+                            <m:Text text="{Matnr}" />
+                            <m:Text text="{Posnr}" />
+                        </m:cells>
+                    </m:ColumnListItem>
+                </m:items>
+            </m:Table>
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
