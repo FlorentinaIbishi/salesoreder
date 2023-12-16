@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleFilterDialogConfirm">
+		<filterItems>
+         <ViewSettingsFilterItem
+				text="Date"
+				key="Erdat"
+				multiSelect="false">
+				<items>
+				</items>
+			</ViewSettingsFilterItem>
+
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>
