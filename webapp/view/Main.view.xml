@@ -2,6 +2,54 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <content />
+        <content>
+         <Table
+                id="salesorderTable"
+                items="{/sales_orderSet}"
+            >
+             <headerToolbar>
+				<OverflowToolbar>
+					<Title text="Salesorders" level="H2"/>
+					<ToolbarSpacer/>
+					<Button
+						tooltip="Sort"
+						icon="sap-icon://sort"
+						press="handleSortButtonPressed"/>
+					<Button
+						tooltip="Filter"
+						icon="sap-icon://filter"
+						press="handleFilterButtonPressed"/>
+				</OverflowToolbar>
+			</headerToolbar>
+                <columns>
+                    <Column
+                        id="vbelnCol"
+                        width="12em"
+                    >
+                            <Text text="Vbeln" />
+                    
+                    </Column>
+                    <Column
+                        id="erdatCol"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <Text text="Erdat" />
+                    </Column>
+                
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" vAlign="Middle" press=".onListItemPress">
+                        <cells>
+                            <ObjectIdentifier
+                                title="{Vbeln}"
+                            />
+                            <Text text="{Erdat}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>
